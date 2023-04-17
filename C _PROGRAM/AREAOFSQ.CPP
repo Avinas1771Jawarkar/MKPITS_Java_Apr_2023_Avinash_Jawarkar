@@ -7,5 +7,5 @@ printf("enter the value of area");
 scanf("%d",&a);
 s=a*a;
 printf("%d",s);
-getch() ;
+getch();
 }
