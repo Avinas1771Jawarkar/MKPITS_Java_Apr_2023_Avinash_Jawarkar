@@ -1,10 +1,13 @@
 class substraction{
+		// aguamented with returntype
+public int substract(int number1, int number2){
+return number1 -number2;
+}
 
-public int subtraction(int number3, int number4){
-		return number3 - number4;
-	}
-	public static void main(string[] args){
-	int substract =cal.subtraction(10,6);
-	System.out.println("Subtraction of 2-numbers = "+substract);
-	}
-	}
+public static void main(String[] args){
+substraction cal=new substraction();
+int sub = cal.substract(90,23);
+System.out.println("substraction of 2 no. = "+sub);
+
+}
+}
