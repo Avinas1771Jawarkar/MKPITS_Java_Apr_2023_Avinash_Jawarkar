@@ -1,13 +1,8 @@
-class substraction{
-		// aguamented with returntype
-public int substract(int number1, int number2){
-return number1 -number2;
-}
+class Substraction{
+	Substraction extends calculateddouble{
+		@override
+		public double getcalculatedvalue(double operand1 ,double operand2){
+		return operand1 - operand2;
+	}
 
-public static void main(String[] args){
-substraction cal=new substraction();
-int sub = cal.substract(90,23);
-System.out.println("substraction of 2 no. = "+sub);
-
-}
 }

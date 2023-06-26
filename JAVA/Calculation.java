@@ -45,7 +45,7 @@ class Calculation{
 
 public static void main(int number1,int number2){
 	int sum=number1s
-     cal=neCalculationw Calculation(); //Create object
+     cal=newCalculation Calculation(); //Create object
 	cal.addition(8,9);
 	
 	
