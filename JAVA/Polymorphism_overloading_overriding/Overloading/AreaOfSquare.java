@@ -4,7 +4,8 @@ class AreaOfSquare{
 		}
 
      public long Square(long side){
-		 return side *side;
+
+	    return side *side;
 		 }
  public static void main(String[] args){
  AreaOfSquare areaofsquare =new AreaOfSquare();
