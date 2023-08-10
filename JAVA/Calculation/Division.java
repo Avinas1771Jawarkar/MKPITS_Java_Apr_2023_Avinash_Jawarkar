@@ -1,7 +1,8 @@
-package calculation;
+package Calculation;
 
-public class Division extends Calculation{
-    public int calculate(int a,int b){
+public class Division implements Calculation{
+    public int calculation(int a ,int b){
         return a/b;
+
     }
 }

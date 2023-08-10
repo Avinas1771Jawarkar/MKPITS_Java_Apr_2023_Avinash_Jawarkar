@@ -1,7 +1,7 @@
-package calculation;
+package Calculation;
 
-public class Substraction extends Calculation{
-    public int calculate(int a,int b){
+public class Substraction implements Calculation{
+    public int calculation(int a,int b){
         return a-b;
     }
 }

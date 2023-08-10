@@ -1,5 +1,6 @@
-package calculation;
+package Calculation;
 
-public abstract class Calculation {
-public  abstract  int calculate (int a,int b);
+public interface  Calculation {
+
+    int calculation(int a, int b);
 }

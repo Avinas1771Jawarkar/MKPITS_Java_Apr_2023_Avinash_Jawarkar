@@ -1,7 +1,7 @@
-package calculation;
+package Calculation;
 
-public class Multiplication extends Calculation {
-    public int calculate(int a ,int b){
+public class Multiplication implements Calculation{
+    public int calculation(int a,int b){
         return a*b;
     }
 }
