@@ -1,0 +1,23 @@
+use mySql_database
+
+DROP PROCEDURE factorial_in_repeatant
+
+DELIMITER //
+CREATE PROCEDURE factorial_in_repeatant(num int)
+BEGIN
+declare counter int;
+declare fact int;
+set counter = 1;
+set fact = 1;
+ 
+repeat 
+set fact = fact * counter;
+set counter = counter + 1;
+until counter >= num
+end repeat;
+select counter;
+END 
+//
+DELIMITER ;
+
+CALL factorial_in_repeatant(8)
