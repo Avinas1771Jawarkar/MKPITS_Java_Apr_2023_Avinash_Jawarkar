@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/s}"  th:object="${stud}" method="get" >
+    RollNo <input type="text" name="RollNo"><br>
+    Name <input type="text" name="Name"><br>
+
+    Address <input type="text" name="address" th:field="*{address}"><br>
+    <span th:if="${#fields.hasErrors('address')}"
+          th:errors="*{address}"
+    class="error">
+
+    </span>
+
+    <div>
+        <label>City</label>
+        <select name="city" id="city" >
+            <option value="select"></option>
+            <option value="Amravati">Amravati</option>
+            <option value="Pune">Pune</option>
+            <option value="Buldana">Buldana</option>
+            <option value="Akola">Akola</option>
+        </select>
+    </div>
+
+    <div>
+     Gender <input type="radio" name="Gender" value="Male"th:field="${stud.gender}">Male
+        <input type="radio" name="Gender" value="Female"th:field="${stud.gender}">Female
+    </div>
+    <div>
+        <label>Education</label>
+        <input type="checkbox" name="course" value="10th"th:field="${stud.eduction}">10th
+        <input type="checkbox" name="course" value="12th"th:field="${stud.eduction}">12th
+        <input type="checkbox" name="course" value="UG"th:field="${stud.eduction}">UG
+        <input type="checkbox" name="course" value="PG"th:field="${stud.eduction}">PG
+    </div>
+
+    <input type="submit" value="submit">
+</form>
+
+</body>
+</html>
