@@ -1,8 +1,6 @@
 package com.example.DatabaseMapping.Service;
 
-import com.example.DatabaseMapping.Entity.Course;
 import com.example.DatabaseMapping.Entity.Student;
-import com.example.DatabaseMapping.Repsositry.CourseRepsositry;
 import com.example.DatabaseMapping.Repsositry.StudentRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +11,7 @@ import java.util.List;
 @Service
 public class StudentServiceImplement implements StudentService {
     private StudentRepository studentRepository;
-
-
-
+@Autowired
     public StudentServiceImplement(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
@@ -38,16 +34,6 @@ public class StudentServiceImplement implements StudentService {
         return studentRepository.findAll();
     }
 
-    @Override
-    public void deleteData(Integer rollno) {
-      studentRepository.deleteById(rollno);
-    }
-
-//    @Override
-//    public String coursesave(Course course) {
-//        courseRepsositry.save(course);
-//        return "show data";
-//}
 
 
 }

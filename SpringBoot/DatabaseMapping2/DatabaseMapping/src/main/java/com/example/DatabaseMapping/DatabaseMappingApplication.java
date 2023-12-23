@@ -1,14 +1,14 @@
 package com.example.DatabaseMapping;
 
 import com.example.DatabaseMapping.Entity.Address;
-import com.example.DatabaseMapping.Entity.Course;
 import com.example.DatabaseMapping.Entity.Student;
+import com.example.DatabaseMapping.Service.AddressServiceImplement;
 import com.example.DatabaseMapping.Service.StudentServiceImplement;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
@@ -17,6 +17,13 @@ public class DatabaseMappingApplication implements CommandLineRunner {
 
 private StudentServiceImplement studentServiceImplement;
 
+private AddressServiceImplement addressServiceImplement;
+
+
+	public DatabaseMappingApplication(AddressServiceImplement addressServiceImplement) {
+		this.addressServiceImplement = addressServiceImplement;
+	}
+@Autowired
 	public DatabaseMappingApplication(StudentServiceImplement studentServiceImplement) {
 		this.studentServiceImplement = studentServiceImplement;
 	}
@@ -28,39 +35,22 @@ private StudentServiceImplement studentServiceImplement;
 	}
 	@Override
 	public void run(String... args) throws Exception {
-//=\
-		saveDate();
-		findData(38);
+//		saveDate();
+//		findData();
 //		allStudentFind();
-//		deleteData();
+		findById();
 	}
 
-	public String  saveDate() {
+	public void  saveDate(){
 
-		Address address = new Address("Shegaon naka", "Amravati");
-
-		List<Course> courseslist = new ArrayList<>();
-		Course course1 = new Course("Java");
-		Course course2 = new Course("python");
-		Student student = new Student("Pradnya", address,courseslist);
-		courseslist.add(course1);
-		courseslist.add(course2);
-		student.setCourse(courseslist);
-//		System.out.println(course1);
-//		System.out.println(course2);
-		String str= studentServiceImplement.save(student);
-		System.out.println(student);
-		System.out.println(courseslist);
-
-
-		return str;
-
-
-
+		Address address=new Address("Shegaon naka","Amravati");
+		Student student=new Student("Kshitij",address);
+		String record=studentServiceImplement.save(student);
+		System.out.println(record);
 	}
 
-	public void findData(Integer rollno){
-   Student student= studentServiceImplement.find(rollno);
+	public void findData(){
+   Student student= studentServiceImplement.find(1);
 		System.out.println(student);
 	}
 
@@ -69,13 +59,11 @@ private StudentServiceImplement studentServiceImplement;
 		System.out.println(studentList);
 	}
 
-	public void deleteData(){
-		studentServiceImplement.deleteData(29);
 
+	public void findById(){
 
+		System.out.println(" display by Id : "+addressServiceImplement.findid(5));
 	}
-
-
 
 
 

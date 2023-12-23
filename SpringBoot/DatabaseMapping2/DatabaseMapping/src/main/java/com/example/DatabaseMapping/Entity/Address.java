@@ -10,11 +10,28 @@ public class Address {
     private int id;
     private String address;
     private String city;
+    @OneToOne(mappedBy ="address",cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_Information_rollno")
+    private Student student;
 
     public Address() {
     }
 
-    public Address( String address, String city) {
+    public Address(String address, String city, Student student) {
+        this.address = address;
+        this.city = city;
+        this.student = student;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Address(String address, String city) {
 
         this.address = address;
         this.city = city;
@@ -46,7 +63,6 @@ public class Address {
 
     @Override
     public String toString() {
-
         return "Address{" +
                 "id=" + id +
                 ", address='" + address + '\'' +
