@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Add your head content -->
+</head>
+<body>
+
+<h1>Cart Page</h1>
+
+<form th:action="@{/processCart}" method="post" th:object="${cartFormData}">
+    <label>Product Name:</label>
+    <input type="text" th:field="*{product}" placeholder="Product Name" />
+
+    <label>Quantity:</label>
+    <input type="number" th:field="*{quantity}" placeholder="Quantity" />
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

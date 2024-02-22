@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Add your head content -->
+</head>
+<body>
+
+<h1>Buy Page</h1>
+
+<!-- Display processed data if needed -->
+<div th:if="${processedData}">
+    <h2>Processed Data:</h2>
+    <p>Product: <span th:text="${processedData.product}"></span></p>
+    <p>Quantity: <span th:text="${processedData.quantity}"></span></p>
+</div>
+
+<!-- Add your buy page content -->
+
+</body>
+</html>
